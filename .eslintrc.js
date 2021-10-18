@@ -69,6 +69,14 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    "indent": ["error", 4],
+    "vue/html-indent": ["error", 4, {
+        "attribute": 1,
+        "baseIndent": 1,
+        "closeBracket": 0,
+        "alignAttributesVertically": true,
+        "ignores": []
+    }],
     // allow async-await
     "generator-star-spacing": "off",
     // allow paren-less arrow functions
