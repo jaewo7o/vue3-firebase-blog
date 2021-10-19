@@ -2,6 +2,9 @@
 import { ref } from 'vue'
 import { db } from 'boot/firebase'
 import { doc, setDoc } from 'firebase/firestore'
+import { useQuasar } from 'quasar'
+
+const $q = useQuasar()
 
 const title = ref('')
 const content = ref('')
@@ -15,6 +18,10 @@ const onSubmit = async () => {
             content: content.value
         }
     )
+
+    $q.notify({
+        message: 'Successfully saved'
+    })
 }
 
 const onReset = () => {
