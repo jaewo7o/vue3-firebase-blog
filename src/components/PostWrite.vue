@@ -3,8 +3,10 @@ import { ref } from 'vue'
 import { db } from 'boot/firebase'
 import { doc, setDoc } from 'firebase/firestore'
 import { useQuasar } from 'quasar'
+import { useRouter } from 'vue-router'
 
 const $q = useQuasar()
+const router = useRouter()
 
 const title = ref('')
 const content = ref('')
@@ -22,6 +24,8 @@ const onSubmit = async () => {
     $q.notify({
         message: 'Successfully saved'
     })
+
+    await router.push('/list')
 }
 
 const onReset = () => {

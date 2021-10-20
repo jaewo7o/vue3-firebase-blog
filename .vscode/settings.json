@@ -11,5 +11,14 @@
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
   "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
   "vetur.format.defaultFormatter.html": "js-beautify-html",
-  "vetur.format.defaultFormatter.js": "vscode-typescript"
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "typescript.format.semicolons": "remove",
+  "javascript.format.semicolons": "remove",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "semi": false,
+      "singleQuote": true,
+      "trailingComma": "none"
+    }
+  }
 }
