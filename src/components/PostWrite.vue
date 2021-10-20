@@ -11,15 +11,14 @@ const router = useRouter()
 const title = ref('')
 const content = ref('')
 
-const ruleRequired = (val: string) => (val && val.length > 0) || 'Please type something'
+const ruleRequired = (val: string) =>
+    (val && val.length > 0) || 'Please type something'
 
 const onSubmit = async () => {
-    await setDoc(
-        doc(db, 'posts', title.value), {
-            title: title.value,
-            content: content.value
-        }
-    )
+    await setDoc(doc(db, 'posts', title.value), {
+        title: title.value,
+        content: content.value
+    })
 
     $q.notify({
         message: 'Successfully saved'
@@ -32,7 +31,6 @@ const onReset = () => {
     title.value = ''
     content.value = ''
 }
-
 </script>
 <template>
     <q-form
