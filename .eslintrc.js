@@ -1,4 +1,4 @@
-const { resolve } = require("path");
+const { resolve } = require("path")
 module.exports = {
   // https://eslint.org/docs/user-guide/configuring#configuration-cascading-and-hierarchy
   // This option interrupts the configuration hierarchy at this file
@@ -71,11 +71,16 @@ module.exports = {
   rules: {
     "indent": ["error", 4],
     "vue/html-indent": ["error", 4, {
-        "attribute": 1,
-        "baseIndent": 1,
-        "closeBracket": 0,
-        "alignAttributesVertically": true,
-        "ignores": []
+      "attribute": 1,
+      "baseIndent": 1,
+      "closeBracket": 0,
+      "alignAttributesVertically": true,
+      "ignores": []
+    }],
+    'space-before-function-paren': ['error', {
+      anonymous: 'always',
+      named: 'never',
+      asyncArrow: 'always'
     }],
     // allow async-await
     "generator-star-spacing": "off",
@@ -102,4 +107,4 @@ module.exports = {
     // allow debugger during development only
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
   },
-};
+}

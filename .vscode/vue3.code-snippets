@@ -1,0 +1,26 @@
+{
+	"Vue class component 3": {
+		"scope": "vue",
+		"prefix": "vue3",
+		"body": [
+			"<template>",
+			"\t<div>",
+			"\t\tnew",
+			"\t</div>",
+			"</template>",
+			"<script lang=\"ts\">",
+			"import { defineComponent } from 'vue'",
+			"",
+			"export default defineComponent({",
+			"\tname: '${TM_FILENAME_BASE}',",
+			"",
+			"\tsetup () {",
+			"\t\t//",
+			"\t}",
+			"})",
+			"</script>",
+			""
+		],
+		"description": "Vue3 Composition API"
+	}
+}
