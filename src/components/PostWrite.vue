@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { db } from 'boot/firebase'
-import { doc, setDoc } from 'firebase/firestore'
 import { useQuasar } from 'quasar'
 import { useRouter } from 'vue-router'
+import { Post, setPost } from 'src/models/Post'
 
 const $q = useQuasar()
 const router = useRouter()
@@ -15,10 +14,7 @@ const ruleRequired = (val: string) =>
     (val && val.length > 0) || 'Please type something'
 
 const onSubmit = async () => {
-    await setDoc(doc(db, 'posts', title.value), {
-        title: title.value,
-        content: content.value
-    })
+    await setPost(new Post(title.value, content.value))
 
     $q.notify({
         message: 'Successfully saved'
