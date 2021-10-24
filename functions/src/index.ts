@@ -1,9 +1,9 @@
-// import * as functions from "firebase-functions";
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+import onUser from './events/user'
+
+export const userCreated = onUser.created
+export const userDeleted = onUser.deleted
+
+console.log('-------> start')
+console.log(`run ${new Date().toLocaleString()}`)
+console.log('-------> end')
